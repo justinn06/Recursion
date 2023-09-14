@@ -17,8 +17,9 @@ public class Main {
         int f = factorial(n);
         System.out.println(f);
 
-        String fib = fibonacci(n);
-        System.out.println(fib);
+        int fib = fib(n);
+        for (int i = 1; i <= n; i++)
+            System.out.print(fib(i) + " ");
 
         int eyes = eyes(n);
         System.out.println(eyes);
@@ -50,11 +51,11 @@ public class Main {
     }
 
     //Print fibonacci to nth term, not working.
-    public static String fibonacci(int n) {
-        if (n <= 1)
-            return Integer.toString(n);
+    public static int fib(int n) {
+        if (n <= 2)
+            return 1;
         else
-            return n-1 + " " + fibonacci(n-2);
+            return fib(n-1) + fib(n-2);
     }
 
     //How many eyes on n cats.
@@ -62,7 +63,7 @@ public class Main {
         if (n == 1)
             return n*2;
         else
-            return (1*2)+eyes(n-1);
+            return 2 + eyes(n-1);
     }
 
     //n to the power of x.
